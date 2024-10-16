@@ -5,6 +5,7 @@ import {
   fetchNFTsOwnedByAddressAndNftAddress,
   fetchPricesEndpoint,
   fetchProposalsCreatedByGovernorAddress,
+  getNftHolders,
   getNftInfo,
 } from '@/lib/endpoints'
 import { tokenContracts, GovernorAddress } from '@/lib/contracts'
@@ -123,3 +124,6 @@ export async function fetchIpfsUri(
 
 export const fetchNftInfo = (address: string) =>
   axiosInstance.get(getNftInfo.replace('{{nftAddress}}', address))
+// @TODO get backend params
+export const fetchNftHoldersOfAddress = (address: string, params: unknown) =>
+  axiosInstance.get(getNftHolders.replace('{{address}}', address), { params }).then(res => res.data)
