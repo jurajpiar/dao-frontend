@@ -10,4 +10,4 @@ export const fetchProposalsCreatedByGovernorAddress = `/address/{{address}}/even
 
 export const getNftInfo = `/nfts/{{nftAddress}}?chainId=${CHAIN_ID}`
 
-export const getTokenHoldersOfAddress = '/address/{{address}}/holders'
+export const getTokenHoldersOfAddress = `/address/{{address}}/holders?chainId=${CHAIN_ID}`
